@@ -35,7 +35,8 @@ RUN chmod +x /script.sh && ./script.sh
 
 RUN apt-get -y install --no-install-recommends /${PACK_NAME} 
 
-# mv /usr/share/jitsi-meet/interface_config.js /defaults && \
+RUN mv /usr/share/jitsi-meet/interface_config.js /defaults \
+      && apt-cleanup
 
 EXPOSE 80 443
 

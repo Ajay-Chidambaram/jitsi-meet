@@ -21,9 +21,12 @@ RUN apt-dpkg-wrap apt-get update && \
 ARG DEBIAN_FRONTEND=noninteractive
 ARG PACK_NAME=jitsi-meet-web_1.0.1-1_all.deb
 COPY ./${PACK_NAME} /
+COPY ./script.sh /
 
 # RUN apt upgrade dpkg/jammy-updates
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
+
+RUN chmod +x /script.sh && ./script.sh
 
 RUN apt-get -y install --no-install-recommends /${PACK_NAME} 
 

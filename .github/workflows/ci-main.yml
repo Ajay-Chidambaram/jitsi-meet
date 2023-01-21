@@ -43,7 +43,7 @@ jobs:
       - name: Install Build Dependencies
         run: |
           sudo apt -y update
-          sudo apt -y build-dep jitsi-meet
+          sudo apt -y build-dep .
   
       # To build the package
       - name: Build Package

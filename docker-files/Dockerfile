@@ -23,6 +23,10 @@ ARG PACK_NAME=jitsi-meet-web_1.0.1-1_all.deb
 COPY ./${PACK_NAME} /
 COPY ./script.sh /
 
+RUN apt-get -y update \
+      && apt-get -y install zstd
+
+
 # RUN apt upgrade dpkg/jammy-updates
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 

@@ -24,7 +24,8 @@ COPY ./${PACK_NAME} /
 COPY ./script.sh /
 
 RUN apt-get -y update \
-      && apt-get -y install zstd
+      && apt-get -y install zstd \
+      && apt-get -y install xz-utils 
 
 
 # RUN apt upgrade dpkg/jammy-updates
